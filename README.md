@@ -1,7 +1,9 @@
 # Claude Tool Schema Diagnoser
-A script to automatically diagnose "invalid JSON schema" errors from the Claude API when using custom tools (MCPs).
+The [MCP](https://github.com/modelcontextprotocol) TypeScript (among others) SDK generates JSON Schema `draft-07` via `zod-to-json-schema@3.24.5`, causing 400 errors when MCP servers are used with modern MCP clients like Claude Code, which requires strict compliance with JSON Schema `draft-2020-12`. This breaks compatibility between the MCP ecosystem & Claude Code.
+
+This is a script that should help you automatically diagnose "invalid JSON schema" errors from the Claude API when using your own custom tools (MCPs).
 This tool helps pinpoint which specific tool definition is causing the `tools.X.custom.input_schema: JSON schema is invalid`
-error.
+error and is especially helpful or those who have 10+ MCP servers added to their Claude Code installations.
 
 ### Seeing the following when interacting with Claude? Then this might help.
 ```sh
